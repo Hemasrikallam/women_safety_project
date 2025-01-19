@@ -25,7 +25,8 @@ class PoliceStationCard extends StatelessWidget {
           // Data is available
           final policeStations = snapshot.data!;
 
-            return Column(
+          return SingleChildScrollView(  // Wrap the Column with SingleChildScrollView
+            child: Column(
               children: policeStations.map((station) {
                 return Card(
                   elevation: 5,
@@ -42,6 +43,7 @@ class PoliceStationCard extends StatelessWidget {
                   ),
                 );
               }).toList(),
+            ),
           );
         }
       },
