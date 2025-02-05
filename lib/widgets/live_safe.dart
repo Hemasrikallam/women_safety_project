@@ -92,7 +92,7 @@ class _LiveSafeState extends State<LiveSafe> {
 
   // Find nearby hospitals
   Future<void> findNearbyHospitals(Position position) async {
-    String url = 'https://overpass-api.de/api/interpreter?data=[out:json];node(around:5000,${position.latitude},${position.longitude})[amenity=hospital];out;';
+    String url = 'https://overpass-api.de/api/interpreter?data=[out:json];node(around:2000,${position.latitude},${position.longitude})[amenity=hospital];out;';
 
     try {
       final response = await http.get(Uri.parse(url));
